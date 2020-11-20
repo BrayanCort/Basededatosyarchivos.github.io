@@ -55,6 +55,8 @@
          <h1>Pasatiempos</h1>
     </header>
        <p><input id="nombre" type="text" placeholder="Nombre" required></p>
+       <p><input id="desc" type="text" placeholder="Descripcion del pasatiempo" required></p>
+       <p><input id="tiem" type="text" placeholder="tiempo de dedicacion" required></p>
        <p><input id="fecha" type="date" required></p>
        
        <ul id="lista">
@@ -111,6 +113,8 @@
         eliminar.disabled = true; // Deshabilita el botón "eliminar".
         id = "";
         nombre.value = "";
+        desc.value="";
+        tiem.value="";
         fecha.value="";
       }
       /** Prepara la forma para modificar el documento que corresponde al
@@ -140,7 +144,7 @@
       }
       function leeModelo() {
         return {
-          PAS_NOMBRE: nombre.value.trim(), FECHA: fecha.value
+          PAS_NOMBRE: nombre.value.trim(),PAS_DESC: desc.value.trim(),PAS_TIEM: tiem.value.trim(), FECHA: fecha.value
         };
       }
       async function guarda() {
